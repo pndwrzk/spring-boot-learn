@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.learn.ecommerce.entity.ProductEntity;
+import com.learn.ecommerce.response.PaggingInfo;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,15 +22,15 @@ public class ProductService {
         return  products.toList();
     }
 
-    public List<ProductEntity> getProducts(Integer pageNumber, Integer pageSize, String q, Integer categoryId) {
+    public PaggingInfo<ProductEntity> getProducts(Integer pageNumber, Integer pageSize, String q, Integer categoryId) {
         if(q != null) {
             PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize);
             //Page<ProductEntity> products = productRepository.findByNameContainsIgnoreCaseAndDescriptionContainsIgnoreCase(q, q,pageRequest);
             Page<ProductEntity> products = productRepository.filter(q,categoryId,pageRequest);
-            return  products.toList();
+            return  PaggingInfo.convertFromPage(products);
         }
         PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize);
         Page<ProductEntity> products = productRepository.findAll(pageRequest);
-        return  products.toList();
+        return PaggingInfo.convertFromPage(products);
     }
 }

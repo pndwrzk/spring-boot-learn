@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.learn.ecommerce.entity.ProductEntity;
 import com.learn.ecommerce.response.BaseResponse;
+import com.learn.ecommerce.response.PaggingInfo;
 
 import lombok.AllArgsConstructor;
 
@@ -35,7 +36,7 @@ public class ProductController {
             @RequestParam(required = false) String q) {
         BaseResponse response = new BaseResponse();
         try {
-            List<ProductEntity> products = productService.getProducts(page, size, q,categoryId);
+            PaggingInfo<ProductEntity> products = productService.getProducts(page, size, q,categoryId);
 
             response.setStatus(true);
             response.setMessage("Success");
