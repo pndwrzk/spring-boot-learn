@@ -1,4 +1,4 @@
-package com.learn.ecommerce.response;
+package com.learn.ecommerce.model.response;
 
 import java.util.List;
 import org.springframework.data.domain.Page;

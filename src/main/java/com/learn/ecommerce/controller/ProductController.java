@@ -1,14 +1,15 @@
-package com.learn.ecommerce;
+package com.learn.ecommerce.controller;
 
-import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.learn.ecommerce.entity.ProductEntity;
-import com.learn.ecommerce.response.BaseResponse;
-import com.learn.ecommerce.response.PaggingInfo;
+import com.learn.ecommerce.model.entity.ProductEntity;
+import com.learn.ecommerce.model.response.BaseResponse;
+import com.learn.ecommerce.model.response.PaggingInfo;
+import com.learn.ecommerce.service.ProductService;
 
 import lombok.AllArgsConstructor;
 

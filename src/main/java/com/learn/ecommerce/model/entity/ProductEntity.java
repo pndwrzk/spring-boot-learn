@@ -1,4 +1,4 @@
-package com.learn.ecommerce.entity;
+package com.learn.ecommerce.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

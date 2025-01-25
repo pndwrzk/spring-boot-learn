@@ -1,9 +1,9 @@
-package com.learn.ecommerce;    
+package com.learn.ecommerce.controller;    
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.learn.ecommerce.response.BaseResponse;
+import com.learn.ecommerce.model.response.BaseResponse;
 
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;

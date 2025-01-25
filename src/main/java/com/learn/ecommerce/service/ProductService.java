@@ -1,4 +1,4 @@
-package com.learn.ecommerce;
+package com.learn.ecommerce.service;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.learn.ecommerce.entity.ProductEntity;
-import com.learn.ecommerce.response.PaggingInfo;
+import com.learn.ecommerce.model.entity.ProductEntity;
+import com.learn.ecommerce.model.response.PaggingInfo;
+import com.learn.ecommerce.repository.ProductRepository;
 
 import lombok.RequiredArgsConstructor;
 
