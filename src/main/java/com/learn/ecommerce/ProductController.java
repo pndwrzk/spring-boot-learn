@@ -31,10 +31,11 @@ public class ProductController {
     BaseResponse getProducts(
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "100") Integer size,
+            @RequestParam(required =  false, name="categoryId") Integer categoryId,
             @RequestParam(required = false) String q) {
         BaseResponse response = new BaseResponse();
         try {
-            List<ProductEntity> products = productService.getProducts(page, size, q);
+            List<ProductEntity> products = productService.getProducts(page, size, q,categoryId);
 
             response.setStatus(true);
             response.setMessage("Success");

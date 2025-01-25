@@ -21,10 +21,11 @@ public class ProductService {
         return  products.toList();
     }
 
-    public List<ProductEntity> getProducts(Integer pageNumber, Integer pageSize, String q) {
+    public List<ProductEntity> getProducts(Integer pageNumber, Integer pageSize, String q, Integer categoryId) {
         if(q != null) {
             PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize);
-            Page<ProductEntity> products = productRepository.findByNameContainsIgnoreCaseAndDescriptionContainsIgnoreCase(q, q, pageRequest);
+            //Page<ProductEntity> products = productRepository.findByNameContainsIgnoreCaseAndDescriptionContainsIgnoreCase(q, q,pageRequest);
+            Page<ProductEntity> products = productRepository.filter(q,categoryId,pageRequest);
             return  products.toList();
         }
         PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize);
